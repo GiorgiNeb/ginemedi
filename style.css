@@ -1,0 +1,396 @@
+:root {
+  --header-background-color: rgb(93, 112, 219);
+  --color-primary: #0073ff;
+  --color-white: #e9e9e9;
+  --menu-color: #170d6d;
+  --color-black-1: #212b38;
+  --footer-background-color: rgb(66, 85, 196);
+  --contactBoxColor: rgb(224, 218, 218);
+  --main-background-color: rgb(241, 232, 232);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "eka";
+  src: url("fonts/NotoSerifGeorgian-VariableFont_wdth\,wght.ttf");
+}
+
+.fa-solid,
+.fa-regular {
+  margin-right: 5px;
+}
+
+body {
+  width: 100%;
+  height: auto;
+}
+
+.main-title {
+  font-size: 30px;
+  text-align: center;
+  color: #0a468b;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+/* Start of services styles */
+#services-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 30px;
+  z-index: 0;
+}
+
+.services {
+  height: 300px;
+  width: 400px;
+  background-color: #0b3e77;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.services:hover img {
+  filter: blur(5px);
+}
+
+.services h2 {
+  color: #133a69;
+  font-size: 2em;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+.services img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: blur(1px);
+}
+/* End of services styles */
+
+/* Start of header styles */
+.menu-bar {
+  background-color: var(--menu-color);
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+
+#logo {
+  background-image: url(images//logo.jpg);
+  width: 100px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#headerUl {
+  display: flex;
+  list-style: none;
+}
+
+#headerUl > li {
+  position: relative;
+  padding: 10px 30px;
+}
+
+#headerUl li a {
+  font-size: 20px;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#headerUl > li:hover > a {
+  color: var(--color-primary);
+}
+
+.subList {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: var(--menu-color);
+}
+
+#headerUl li:hover .subList {
+  display: block;
+}
+.subList ul {
+  list-style: none;
+  display: block;
+  margin: 10px;
+}
+
+.subList ul li {
+  margin: 25px;
+  cursor: pointer;
+}
+
+.subList ul li a {
+  color: var(--color-white);
+}
+
+.subList ul li:hover a {
+  color: var(--color-primary) !important;
+}
+
+/* End of header styles */
+
+#mainScreen {
+  width: 100%;
+  height: calc(100vh - 80px);
+  margin-top: 80px;
+  background-color: blueviolet;
+  background-image: url(images//img1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Start of contact styles */
+.contacts {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.contacts a {
+  text-decoration: none;
+  color: rgb(47, 90, 125);
+  transition: all 0.3s;
+}
+.contacts .contactBox:hover a {
+  color: rgb(104, 139, 168);
+}
+
+.contactBox {
+  width: 250px;
+  height: 150px;
+  background-color: var(--contactBoxColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+}
+
+.contactBox i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: -25px;
+  left: 100px;
+  background-color: var(--contactBoxColor);
+  font-size: 30px;
+  border: 1px solid rgb(104, 104, 221);
+  color: rgb(104, 104, 221);
+}
+.contacts h1 {
+  text-align: center;
+  margin: 20px 20px;
+  font-size: 20px;
+}
+
+#contactMap {
+  width: 100%;
+  height: 400px;
+}
+
+/* End of contact styles */
+
+section > p {
+  margin: 0 5vw;
+  margin-bottom: 50px;
+}
+
+/* Start of footer styles */
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  background-color: #170d6d;
+}
+
+.map {
+  width: 500px;
+  height: 280px;
+  border-radius: 10px;
+}
+
+.footerContacts {
+  width: 600px;
+  height: 80%;
+}
+
+.footerContacts a {
+  text-decoration: none;
+  color: aliceblue;
+  transition: all 0.3s;
+}
+
+.footerContacts h1 {
+  margin: 20px 20px;
+  font-size: 20px;
+  font-size: 15px;
+}
+.fa-solid,
+.fa-facebook {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+footer .fa-mobile {
+  margin-left: 25px;
+}
+
+.footerContacts a:hover {
+  color: var(--color-primary);
+}
+
+hr {
+  background-color: rgb(134, 137, 141);
+  width: 80%;
+  height: 4px;
+  border-radius: 2px;
+  box-shadow: 2px 0px 5px #d9dde2;
+}
+
+/* End of footer styles */
+
+/* Start of gallery  page styles */
+.main-section {
+  background-color: var(--main-background-color);
+  margin-top: 80px;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.galleryImage {
+  width: 100%;
+  max-width: 300px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.galleryImage:hover {
+  border: 3px solid rgb(183, 174, 231);
+}
+
+.zoomed {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(164, 182, 221, 0.8);
+}
+
+.imageZoomed {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#closeImage {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  margin-top: 10px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#closeImage i {
+  font-size: 40px;
+  color: rgb(20, 15, 73);
+  background-color: #57556c;
+  border-radius: 80%;
+}
+
+#leftB,
+#rightB {
+  position: absolute;
+  top: 30vh;
+  width: 45px;
+  height: 25vh;
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #61a6f5;
+}
+
+#leftB:hover,
+#rightB:hover {
+  background-color: #6ba8ee;
+  color: rgb(20, 15, 73);
+}
+
+#leftB {
+  left: 40px;
+}
+
+#rightB {
+  right: 40px;
+}
+
+#leftB i,
+#rightB i {
+  font-size: 50px;
+}
+
+/* End of gallery page styles */
