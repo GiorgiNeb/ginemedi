@@ -10,7 +10,7 @@ let nextImg = 5;
 const imageArray = [];
 let headerelement = document.getElementById("header");
 let footerelement = document.getElementById("footer");
-let messenger = document.getElementById("messenger");
+let messenger = document.getElementById("body");
 
 headerelement.innerHTML = `<h1 id="logo"></h1>
 <ul id="headerUl">
@@ -83,38 +83,65 @@ src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=10
 <hr />
 </div>`;
 
-messenger.innerHTML = `
-<!-- Messenger Chat plugin Code -->
-<div id="fb-root"></div>
+let messengerFirstDiv = document.createElement("div");
+messengerFirstDiv.setAttribute("id", "fb-root");
+let messengerSecondtDiv = document.createElement("div");
+messengerSecondtDiv.setAttribute("id", "fb-customer-chat");
+messengerSecondtDiv.setAttribute("class", "fb-customerchat");
+messenger.insertBefore(messengerSecondtDiv, messenger.firstChild);
+messenger.insertBefore(messengerFirstDiv, messenger.firstChild);
 
-<!-- Your Chat plugin code -->
-<div id="fb-customer-chat" class="fb-customerchat"></div>
+var chatbox = document.getElementById("fb-customer-chat");
+chatbox.setAttribute("page_id", "225325919427623");
+chatbox.setAttribute("attribution", "biz_inbox");
+window.fbAsyncInit = function () {
+  FB.init({
+    xfbml: true,
+    version: "v16.0",
+  });
+};
 
-<script>
-  var chatbox = document.getElementById("fb-customer-chat");
-  chatbox.setAttribute("page_id", "225325919427623");
-  chatbox.setAttribute("attribution", "biz_inbox");
-</script>
+(function (d, s, id) {
+  var js,
+    fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+  fjs.parentNode.insertBefore(js, fjs);
+})(document, "script", "facebook-jssdk");
 
-<!-- Your SDK code -->
-<script>
-  window.fbAsyncInit = function () {
-    FB.init({
-      xfbml: true,
-      version: "v15.0",
-    });
-  };
+//   messenger.innerHTML = `
+// <!-- Messenger Chat plugin Code -->
+//     <div id="fb-root"></div>
 
-  (function (d, s, id) {
-    var js,
-      fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  })(document, "script", "facebook-jssdk");
-</script>`;
+//     <!-- Your Chat plugin code -->
+//     <div id="fb-customer-chat" class="fb-customerchat">
+//     </div>
+
+//     <script>
+//       var chatbox = document.getElementById('fb-customer-chat');
+//       chatbox.setAttribute("page_id", "225325919427623");
+//       chatbox.setAttribute("attribution", "biz_inbox");
+//     </script>
+
+//     <!-- Your SDK code -->
+//     <script>
+//       window.fbAsyncInit = function() {
+//         FB.init({
+//           xfbml            : true,
+//           version          : 'v16.0'
+//         });
+//       };
+
+//       (function(d, s, id) {
+//         var js, fjs = d.getElementsByTagName(s)[0];
+//         if (d.getElementById(id)) return;
+//         js = d.createElement(s); js.id = id;
+//         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+//         fjs.parentNode.insertBefore(js, fjs);
+//       }(document, 'script', 'facebook-jssdk'));
+//     </script>`;
 
 // Start of gallery section
 closeImage.addEventListener("click", function () {
