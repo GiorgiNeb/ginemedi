@@ -12,7 +12,10 @@ let headerelement = document.getElementById("header");
 let footerelement = document.getElementById("footer");
 let messenger = document.getElementById("body");
 
+// Start of Header section
+
 headerelement.innerHTML = `<a id="logo" href="index.html"><a>
+<button id="menuButton"><i class="fa-solid fa-bars"></i></button>
 <ul id="headerUl">
   <li>
     <a href="index.html"><i class="fa-solid fa-house"></i>მთავარი</a>
@@ -42,6 +45,32 @@ headerelement.innerHTML = `<a id="logo" href="index.html"><a>
     <a href="contact.html"><i class="fa-solid fa-phone"></i>კონტაქტი</a>
   </li>
 </ul>`;
+
+if (window.innerWidth < 600) {
+  document.querySelector("#headerUl").style.display = "none";
+}
+
+window.addEventListener("resize", function () {
+  if (window.innerWidth < 600) {
+    document.querySelector("#headerUl").style.display = "none";
+  } else {
+    document.querySelector("#headerUl").style.display = "flex";
+  }
+});
+
+console.log(screen.width);
+
+document.querySelector("#menuButton").addEventListener("click", function () {
+  if (document.querySelector("#headerUl").style.display == "none") {
+    document.querySelector("#headerUl").style.display = "flex";
+  } else {
+    document.querySelector("#headerUl").style.display = "none";
+  }
+});
+
+// End of Header section
+
+// Start of Footer section
 
 footerelement.innerHTML = `<iframe
 class="map"
@@ -82,6 +111,8 @@ src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=10
 </h1>
 <hr />
 </div>`;
+
+// End of Footer section
 
 // Start of messenger section
 
