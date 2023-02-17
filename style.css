@@ -34,7 +34,7 @@ body {
   .main-title {
     font-size: 30px;
     text-align: center;
-    color: #0a468b;
+    color: #c33b8f;
     padding-top: 30px;
     padding-bottom: 20px;
   }
@@ -68,7 +68,7 @@ body {
 
   .docimg {
     background-color: antiquewhite;
-    width: 200px;
+    width: 250px;
     height: 300px;
     border-radius: 15px;
     overflow: hidden;
@@ -361,15 +361,14 @@ body {
     text-decoration: none;
     color: rgb(47, 90, 125);
     transition: all 0.3s;
-    font-size: 15px;
   }
   .contacts .contactBox:hover a {
     color: rgb(104, 139, 168);
   }
 
   .contactBox {
-    width: 200px;
-    height: 100px;
+    width: 250px;
+    height: 150px;
     background-color: var(--contactBoxColor);
     display: flex;
     justify-content: center;
@@ -382,14 +381,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     position: absolute;
-    top: -20px;
-    left: 80px;
+    top: -25px;
+    left: 100px;
     background-color: var(--contactBoxColor);
-    font-size: 20px;
+    font-size: 30px;
     border: 1px solid rgb(104, 104, 221);
     color: rgb(104, 104, 221);
   }
@@ -479,13 +478,13 @@ body {
     gap: 20px;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 20px 10px;
+    padding: 20px 5px;
   }
 
   .galleryImage {
     width: 100%;
-    max-width: 200px;
-    height: 150px;
+    max-width: 150px;
+    height: 170px;
     object-fit: cover;
     border-radius: 10px;
     cursor: pointer;
